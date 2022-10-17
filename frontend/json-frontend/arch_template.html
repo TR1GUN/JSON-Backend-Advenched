@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Шаблоны данных приборов учета</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>	
+		<form action="">	
+			<h3 align=center>Шаблоны данных приборов учета</h3>
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить шаблон" onclick="add_meter_arch_template_row()"></center>
+				<center><input type="button" value="Добавить типы данных" onclick="add_meter_arch_template_settings_row()"></center>
+				<tr>
+				    <td align="center">Имя шаблона</td>
+					<td align="center">Тип архивных данных</td>
+				</tr>
+			</table>
+			<script>get_meter_arch_template_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_meter_arch_template_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_meter_arch_template_settings()"></center></td>
+				</tr>
+			</table>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

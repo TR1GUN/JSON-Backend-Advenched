@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Таблица зарядных станций</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>	
+		<form action="" name="ChargeStationTable">
+			<h3 align=center>Таблица зарядных станций</h3>				
+			<table align=center id="ChargeStations">
+				<center><input type="button" value="Добавить строку" onclick="add_charge_station_row()"></center>
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Тип</td>
+					<td align="center">IP aдрес</td>
+					<td align="center">IP порт</td>
+					<td align="center">ID MQTT брокера</td>
+				</tr>
+			</table>
+			<script>get_charge_station_table()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_charge_station_table()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_charge_station_table()"></center></td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/charge_station_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Опрос приборов учета по событиям</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="">
+			<h3 align=center>Опрос приборов учета по событиям</h3>			
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_meter_action_row()"></center>
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Шаблон данных ПУ</td>
+					<td align="center">Шаблон ПУ</td>
+				</tr>
+			</table>
+			<script>get_meter_action_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_meter_action_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_meter_action_settings()"></center></td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Состояние зарядных станций</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="StateRequest">
+			<h3 align=center>Состояние зарядных станций</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center>Начало данных:<input id="STime" type="text"></center>
+			<center>Конец данных:<input id="ETime" type="text"></center>
+			<center><input type="button" value="Считать" onclick="get_charge_station_state()"></center>
+			</Br>
+			<h3 align=center>Состояние зарядных станций</h3>			
+			<table align=center id="State">
+				<tr>
+				    <td align="center">ID записи</td>
+					<td align="center">ID станции</td>
+					<td align="center">Время</td>
+					<td align="center">Состояние станции</td>
+					<td align="center">Макс. мощность, Вт</td>
+					<td align="center">Макс. ток, А</td>
+					<td align="center">Макс. напряжение,В</td>
+					<td align="center">Входное напряжение,В</td>
+					<td align="center">Темература, С</td>
+					<td align="center">Переданная энергия, сумма, В*ч</td>
+					<td align="center">Переданная энергия, сутки, В*ч</td>
+					<td align="center">Ошибки</td>
+					<td align="center">Отсутствует напряжение питания</td>
+					<td align="center">Напряжение питания ниже нормы</td>
+					<td align="center">Напряжение питания выше нормы</td>
+					<td align="center">Срабатывание контроля изоляции входных цепей</td>
+					<td align="center">Отключен главный автоматический выключатель питания</td>
+					<td align="center">Перегрев или неисправность кулеров охлаждения</td>
+					<td align="center">Открытие технологических люков (дверей)</td>
+					<td align="center">Срабатывание выходных цепей защиты от превышения тока</td>
+					<td align="center">Срабатывание контроля изоляции выходных цепей</td>
+					<td align="center">Срабатывание пожарной сигнализации</td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/charge_station_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

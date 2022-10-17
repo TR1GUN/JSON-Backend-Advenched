@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Обновление устройства</title>
+		<script type="text/javascript" src="http.js"></script>
+		<style>
+			#FirmwareUpdateLog {
+				background-color: aliceblue;
+				border: 1px solid gray;
+				padding: 2rem
+			}
+
+			#FirmwareUpdateLogArchive {
+				color: black;
+				background-color: lightgray;
+				display: block;
+				margin: 4em auto 0 auto;
+				text-align: center;
+				padding: 1em;
+				width: 40%;
+				font-size: 1em;
+			}
+
+			#FirmwareUpdateLogArchive:hover {
+				background-color: gray;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 align="center">Обновление устройства</h1>
+
+		<div style="text-align: center; width: 60%; margin: 0 auto">
+			<h3 align="center">Результаты предыдущих обновлений устройства:</h3>
+			<div id="FirmwareUpdateLog"></div>
+			<script>render_firmware_update_log()</script>
+
+			<a id="FirmwareUpdateLogArchive" href="" target="_blank">Скачать архив с логом последнего обновления</a>
+			<script>render_firmware_update_detailed_log()</script>
+		</div>
+
+		<form id="FirmwareUpdateForm" align=center>
+			<p>Для обновления прошивки устройства выберите файл обновления на компьютере и загрузите его на устройство. Устройство перезагрузится после обновления.</p>
+			<p></p>
+			<div>
+				<input type="file" name="fw_update">
+				<input type="submit" value="Загрузить и обновить">
+				<span id="FirmwareUploadProgress"></span>
+			</div>
+			<div id="FirmwareUpdateResult"></div>
+		</form>
+		<script>handle_firmware_form_submit()</script>
+	</body>
+</html>

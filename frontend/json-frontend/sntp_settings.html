@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки серверов синхронизации времени</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		<form action="">
+			<h3 align=center>Сервера синхронизации времени</h3>
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_sntp_srv_row()"></center>
+				<tr>
+					<td align="center">Адрес</td>
+				</tr>
+			</table>
+			<script>get_sntp_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_sntp_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_sntp_settings()"></center></td>
+				</tr>
+			</table>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/time_info_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

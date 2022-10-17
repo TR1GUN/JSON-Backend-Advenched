@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки УСПД</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+            <h3 align=center>Настройки УСПД</h3>
+            <table align=center>
+                <form method="get" action="/auth_settings">
+				    <tr><td><center><input type="submit" value="Авторизация"></center></td></tr>
+                </form>
+				<form method="get" action="/modem_routing">
+				    <tr><td><center><input type="submit" value="Модем"></center></td></tr>
+                </form>
+				<form method="get" action="/net_routing">
+				    <tr><td><center><input type="submit" value="Сетевые подключения"></center></td></tr>
+                </form>
+				<form method="get" action="/uart_settings">
+				    <tr><td><center><input type="submit" value="Настройки цифровых интерфейсов"></center></td></tr>
+                </form>
+				<form method="get" action="/event_manager_settings">
+				    <tr><td><center><input type="submit" value="Управление системой событий"></center></td></tr>
+                </form>			
+				<form method="get" action="/message_routing">
+				    <tr><td><center><input type="submit" value="Сообщения"></center></td></tr>
+                </form>				
+				<form method="get" action="/dout_routing">
+				    <tr><td><center><input type="submit" value="Линии питания"></center></td></tr>
+                </form>
+				<form method="get" action="/time_info_routing">
+				    <tr><td><center><input type="submit" value="Время"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_routing">
+				    <tr><td><center><input type="submit" value="Приборы учета"></center></td></tr>
+                </form>
+				 <form method="get" action="/charge_station_routing">
+				    <tr><td><center><input type="submit" value="Зарядные станции"></center></td></tr>
+                </form>
+				 <form method="get" action="/update_firmware">
+				    <tr><td><center><input type="submit" value="Обновление устройства"></center></td></tr>
+		</form>
+				<form id="ActionRestartForm">
+				    <tr><td><center><input type="submit" value="Перезагрузка"></center></td></tr>
+                </form>
+				<script>handle_restart_form_submit()</script>
+			</table>                        
+		
+	</body>
+</html>

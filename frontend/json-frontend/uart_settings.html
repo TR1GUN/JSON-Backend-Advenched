@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки цифровых интерфейсов</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="Settings">
+			<h3 align=center>Настройки цифровых интерфейсов</h3>				
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_uart_settings_row()"></center>
+				<tr>
+					<td align="center">ID</td>					
+					<td align="center">Интерфейс</td>
+					<td align="center">Скорость обмена</td>
+					<td align="center">Длина кадра</td>
+					<td align="center">Контроль четности</td>
+					<td align="center">Количество стопбит</td>
+					<td align="center">Линия питания</td>
+				</tr>
+			</table>
+			<script>get_uart_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_uart_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_uart_settings()"></center></td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/main">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

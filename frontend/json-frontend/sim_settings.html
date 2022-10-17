@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки СИМ карт</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		<form action="">
+			<h3 align=center>Настройки СИМ карт</h3>
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_sim_settings_row()"></center>
+				<tr>
+					<td align="center">Номер СИМ карты</td>
+                                        <td align="center">PIN код</td>
+					<td align="center">Адрес</td>
+					<td align="center">Авторизация</td>
+					<td align="center">Логин</td>
+					<td align="center">Пароль</td>
+					<td align="center">Разрешение подключения</td>
+				</tr>	
+			</table>
+			<script>get_sim_settings()</script>
+			<center><input type="button" value="Записать" onclick="set_sim_settings()"></center>
+		</form>		
+		<br></br>
+		<form method="get" action="/modem_routing">
+			<center><input type="submit" value="Назад"></center>
+		</form>		
+	</body>
+</html>

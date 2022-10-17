@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки линий питания</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		
+		<form action="" name="Settings">	
+			<h3 align=center>Настройки линий питания</h3>
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_dout_settings_row()"></center>
+				<tr>
+					<td align="center">Интерфейс линии питания</td>
+					<td align="center">Начальное состояние</td>
+				</tr>
+			</table>
+			<script>get_dout_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_dout_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_dout_settings()"></center></td>
+				</tr>
+			</table>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/dout_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

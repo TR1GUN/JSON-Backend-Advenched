@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Состояние зарядных станций</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="StateRequest">
+			<h3 align=center>История зарядных сессий</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center>Начало данных:<input id="STime" type="text"></center>
+			<center>Конец данных:<input id="ETime" type="text"></center>
+			<center><input type="button" value="Считать" onclick="get_charge_session_state()"></center>
+			</Br>
+			<h3 align=center>История зарядных сессий</h3>			
+			<table align=center id="State">
+				<tr>
+				    <td align="center">ID записи</td>
+					<td align="center">ID станции</td>
+					<td align="center">Время</td>
+					<td align="center">ID зарядной сессии</td>
+					<td align="center">Код причины завершения сессии</td>
+					<td align="center">ID подвижного состава</td>
+					<td align="center">Гаражный номер подвижного состава</td>
+					<td align="center">Ср. мощность, Вт</td>
+					<td align="center">Ср. ток, А</td>
+					<td align="center">Ср. напряжение,В</td>
+					<td align="center">Суммарная мощность сессии,Вт*ч</td>
+					<td align="center">Время начала сессии</td>
+					<td align="center">Время завершения сессии</td>
+					<td align="center">Уровень заряда в начале,%</td>
+					<td align="center">Уровень заряда в конце,%</td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/charge_station_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

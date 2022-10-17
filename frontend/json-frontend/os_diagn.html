@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8" http-equiv="Refresh" content="15"/>
+		<title>Информация о операционной системе</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="OSStateInfo">
+			<center>Операционная система: <output id="osname" type="text"></center>
+			<center>Время работы: <output id="osruntime" type="text"></center>
+			<h3 align=center>Менеджер памяти</h3>			
+			<table align=center>
+				<tr><td>Свободная память(heap):</td><td><input id="heapfree"></td></tr>
+				<tr><td>Минимальное количество свободной памяти(heap):</td><td><input id="heapmin"></td></tr>
+			</table>
+			<h3 align=center>Менеджер процессов</h3>			
+			<table align=center id="State">
+				<tr>
+					<td align="center">Идентификатор процесса</td>
+					<td align="center">Имя</td>
+					<td align="center">Состояние</td>
+					<td align="center">Приоритет</td>
+					<td align="center">Выделено памяти(stack)</td>
+					<td align="center">Свободно памяти(stack)</td>
+					<td align="center">Минимальное количество свободной памяти(stack)</td>
+					<td align="center">Время работы</td>
+				</tr>
+			</table>			
+			<script>get_os_state()</script>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/main">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

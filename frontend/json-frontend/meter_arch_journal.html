@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Журналы</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Журналы</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center>Начало данных:<input id="STime" type="text"></center>
+			<center>Конец данных:<input id="ETime" type="text"></center>
+			 <center> Выбор журнала:<select id="Jrnl">
+				<option selected value="ElJrnlPwr">журнал управление питанием электросчетчика</option>
+				<option value="ElJrnlTimeCorr">журнал коррекция времени электросчетчика</option>
+				<option value="PlsJrnlTimeCorr">журнал коррекция времени концентратора импульсных счетчиков</option>
+				<option value="ElJrnlReset">журнал сброс показаний электросчетчика</option>
+				<option value="ElJrnlC1Init">журнал инициализация первого массива профилей электросчетчика</option>
+				<option value="ElJrnlC2Init">журнал инициализация второго массива профилей электросчетчика</option>
+				<option value="ElJrnlTrfCorr">журнал коррекция тарификатора электросчетчика</option>
+				<option value="ElJrnlOpen">журнал открытие крышки электросчетчика</option>
+				<option value="ElJrnlUnAyth">журнал неавторизованный доступ электросчетчика</option>
+				<option value="ElJrnlPwrA">журнал управление фазой А электросчетчика</option>
+				<option value="ElJrnlPwrB">журнал управление фазой B электросчетчика</option>
+				<option value="ElJrnlPwrC">журнал управление фазой C электросчетчика</option>
+				<option value="ElJrnlProg">журнал программирование электросчетчика</option>
+				<option value="ElJrnlRelay">журнал управление реле электросчетчика</option>
+				<option value="ElJrnlLimESumm">журнал лимит суммарной энергии электросчетчика</option>
+				<option value="ElJrnlLimETrf">журнал потарифный лимит энергии электросчетчика</option>
+				<option value="ElJrnlLimETrf1">журнал лимит энергии тарифа 1 электросчетчика</option>
+				<option value="ElJrnlLimETrf2">журнал лимит энергии тарифа 2 электросчетчика</option>
+				<option value="ElJrnlLimETrf3">журнал лимит энергии тарифа 3 электросчетчика</option>
+				<option value="ElJrnlLimETrf4">журнал лимит энергии тарифа 4 электросчетчика</option>
+				<option value="ElJrnlLimUAMax">журнал ограничение максимального напряжения фазы А электросчетчика</option>
+				<option value="ElJrnlLimUAMin">журнал ограничение минимального напряжения фазы А электросчетчика</option>
+				<option value="ElJrnlLimUBMax">журнал ограничение максимального напряжения фазы В электросчетчика
+</option>
+				<option value="ElJrnlLimUBMin">журнал ограничение минимального напряжения фазы В электросчетчика</option>
+				<option value="ElJrnlLimUCMax">журнал ограничение максимального напряжения фазы С электросчетчика</option>
+				<option value="ElJrnlLimUCMin">журнал ограничение минимального напряжения фазы С электросчетчика</option>
+				<option value="ElJrnlLimUABMax">журнал ограничение максимального расхождения напряжения фаз А и В электросчетчика</option>
+				<option value="ElJrnlLimUABMin">журнал ограничение минимального расхождения напряжения фаз А и В электросчетчика</option>
+				<option value="ElJrnlLimUBCMax">журнал ограничение максимального расхождения напряжения фаз В и С электросчетчика</option>
+				<option value="ElJrnlLimUBCMin">журнал ограничение минимального расхождения напряжения фаз В и С электросчетчика</option>
+				<option value="ElJrnlLimUCAMax">журнал ограничение максимального расхождения напряжения фаз С и А электросчетчика</option>
+				<option value="ElJrnlLimUCAMin">журнал ограничение минимального расхождения напряжения фаз С и А электросчетчика</option>
+				<option value="ElJrnlLimIAMax">журнал ограничение максимального тока фазы А электросчетчика</option>
+				<option value="ElJrnlLimIBMax">журнал ограничение максимального тока фазы В электросчетчика</option>
+				<option value="ElJrnlLimICMax">журнал ограничение максимального тока фазы С электросчетчика</option>
+				<option value="ElJnlLimFreqMax">журнал ограничение максимальной частоты сети электросчетчика</option>
+				<option value="ElJrnlLimFreqMin">журнал ограничение минимальной частоты сети электросчетчика</option>
+				<option value="ElJrnlLimPwr">журнал ограничение мощности электросчетчика</option>
+				<option value="ElJrnlLimPwrPP">журнал ограничение прямой активной мощности электросчетчика</option>
+				<option value="ElJrnlLimPwrPM">журнал ограничение прямой реактивной мощности электросчетчика</option>
+				<option value="ElJrnlLimPwrQP">журнал ограничение обратной активной мощности электросчетчика</option>
+				<option value="ElJrnlLimPwrQP">журнал ограничение обратной реактивной мощности электросчетчика</option>
+				<option value="ElJrnlRvr">журнал реверс электросчетчика</option>
+			</select></center>
+			<center><input type="button" value="Считать" onclick="get_meter_jrnl()"></center>
+			</Br>
+			<h3 align=center>Записи журналов</h3>			
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Журнал</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени</td>					
+					<td align="center">Идентификатор события</td>	
+					<td align="center">Тип события</td>			
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_data_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

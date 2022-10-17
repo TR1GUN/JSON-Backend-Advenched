@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки управления локальным временем</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+            <h3 align=center>Настройки управления локальным временем</h3>
+            <table align=center>
+				<form method="get" action="/time">
+				    <tr><td><center><input type="submit" value="Информация о времени"></center></td></tr>
+                </form>
+				<form method="get" action="/time_settings">
+				    <tr><td><center><input type="submit" value="Настройки локализации времени"></center></td></tr>
+                </form>
+				<form method="get" action="/schdl_event_table">
+				    <tr><td><center><input type="submit" value="Расписания"></center></td></tr>
+                </form>
+                <form method="get" action="/sntp_settings">
+				    <tr><td><center><input type="submit" value="Настройки серверов синхронизации времени"></center></td></tr>
+                </form>
+				<form method="get" action="/sync_actions_settings">
+				    <tr><td><center><input type="submit" value="Настройки событий синхронизации времени"></center></td></tr>
+                </form>
+				<form method="get" action="/time_jrnl">
+				    <tr><td><center><input type="submit" value="Журнал изменения времени"></center></td></tr>
+                </form>
+				<form method="get" action="/main">
+					<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+				</form>	
+			</table>                        		
+	</body>
+</html>

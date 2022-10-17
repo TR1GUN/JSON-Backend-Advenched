@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки MQTT брокера</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		<form action="">
+			<h3 align=center>Настройки  MQTT брокера</h3>
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_mqtt_srv_row()"></center>
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Адрес</td>
+					<td align="center">Порт</td>
+					<td align="center">Логин</td>
+					<td align="center">Пароль</td>
+					<td align="center">Префикс</td>
+					<td align="center">Идентификатор устройства</td>
+					<td align="center">Настройки шифрования</td>
+				</tr>	
+			</table>
+			<script>get_mqtt_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_mqtt_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_mqtt_settings()"></center></td>
+				</tr>
+			</table>
+		</form>			
+		<br></br>
+		<br></br>
+		<form method="get" action="/mqtt_routing">
+			<center><input type="submit" value="Назад"></center>
+		</form>		
+	</body>
+</html>

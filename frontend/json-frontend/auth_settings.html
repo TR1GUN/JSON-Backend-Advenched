@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки авторизации</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="AuthSettingsTable">
+			<h3 align=center>Настройки авторизации</h3>			
+			<table align=center id="Settings">
+				<center><input type="button" value="Добавить строку" onclick="add_json_auth_settings_row()"></center>
+				<tr>
+					<td align="center">Идентификатор записи</td>
+					<td align="center">Логин</td>
+					<td align="center">Пароль</td>
+					<td align="center">Уровень доступа</td>
+				</tr>
+			</table>
+			<script>get_json_auth_settings()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_json_auth_settings()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_json_auth_settings()"></center></td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>	
+</html>

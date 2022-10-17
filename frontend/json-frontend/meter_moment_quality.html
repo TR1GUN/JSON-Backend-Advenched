@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Текущие показатели качества сети</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Текущие показатели качества сети</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			 <center>
+				<input type="checkbox" id="TagU"> U
+				<input type="checkbox" id="TagI"> I
+				<input type="checkbox" id="TagP"> P
+				<input type="checkbox" id="TagQ"> Q
+				<input type="checkbox" id="TagS"> S
+				<input type="checkbox" id="TagAng"> Ang
+				<input type="checkbox" id="TagkP"> kP
+				<input type="checkbox" id="TagFreq"> Freq
+			</center>
+			<center><input type="button" value="Считать" onclick="get_meter_moment_quality()"></center>
+			</Br>
+			<h3 align=center>Показатели качества сети</h3>		
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени</td>
+					<td align="center">U0,В</td>
+					<td align="center">U1,В</td>
+					<td align="center">U2,В</td>
+					<td align="center">I0,А</td>
+					<td align="center">I1,А</td>
+					<td align="center">I2,А</td>
+					<td align="center">P0,Вт</td>
+					<td align="center">P1,Вт</td>
+					<td align="center">P2,Вт</td>
+					<td align="center">P3,Вт</td>
+					<td align="center">Q0,ВАр</td>
+					<td align="center">Q1,ВАр</td>
+					<td align="center">Q2,ВАр</td>
+					<td align="center">Q3,ВАр</td>
+					<td align="center">S0,ВАр</td>
+					<td align="center">S1,ВАр</td>
+					<td align="center">S2,ВАр</td>
+					<td align="center">S3,ВАр</td>
+					<td align="center">Ang0</td>
+					<td align="center">Ang1</td>
+					<td align="center">Ang2</td>
+					<td align="center">kP0</td>
+					<td align="center">kP1</td>
+					<td align="center">kP2</td>
+					<td align="center">kP3</td>
+					<td align="center">Freq,Гц</td>				
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_data_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

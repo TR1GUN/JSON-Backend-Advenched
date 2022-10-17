@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Настройки локального времени</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		
+		<form action="" name="LocalTimeSettings">	
+			<h3 align=center>Настройки локального времени</h3>
+			<table align=center>
+				<tr><td>Часовой пояс:<input id="tz"></td></tr>
+			</table>
+			<script>get_local_time_settings()</script>
+			<br></br>
+			<table align=center>
+				<tr><td><center><input type="button" value="Записать" onclick="set_local_time_settings()"></center></td></tr>
+			</table>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/time_info_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

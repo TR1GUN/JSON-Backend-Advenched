@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Таблица приборов учета</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>	
+		<form action="" name="MeterTable">
+			<h3 align=center>Таблица приборов учета</h3>				
+			<table align=center id="Meters">
+				<center><input type="button" value="Добавить строку" onclick="add_meter_row()"></center>
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">ID родительского устройства</td>
+					<td align="center">Тип</td>
+					<td align="center">Адрес</td>
+					<td align="center">Пароль первого уровня</td>
+					<td align="center">Пароль второго уровня</td>
+					<td align="center">Интерфейс</td>
+					<td align="center">Настройки интерфейса</td>
+					<td align="center">Тип объекта RTU</td>
+					<td align="center">Номер объекта RTU</td>
+					<td align="center">Номер фидера RTU</td>
+				</tr>
+			</table>
+			<script>get_meter_table()</script>
+			<table align=center>
+				<tr>
+					<td><center><input type="button" value="Записать" onclick="set_meter_table()"></center></td>
+					<td><center><input type="button" value="Очистить" onclick="del_meter_table()"></center></td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

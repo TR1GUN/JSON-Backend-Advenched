@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Журнал ответов приборов учета</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		
+		<form action="" name="Jrnl">	
+			<h3 align=center>Журнал ответов приборов учета</h3>
+			<table align=center id="Jrnl">
+				<tr>
+					<td align="center">Идентификатор события</td>					
+					<td align="center">Время</td>
+					<td align="center">Идентификатор прибора учета</td>
+					<td align="center">Тип прибора учета</td>
+					<td align="center">Адрес прибора учета</td>
+					<td align="center">Линия интерфейса</td>
+					<td align="center">Признак наличия ответа</td>
+				</tr>
+			</table>
+			<script>get_meter_answ_jrnl()</script>
+			<br></br>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

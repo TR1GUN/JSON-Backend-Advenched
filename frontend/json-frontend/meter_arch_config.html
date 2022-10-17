@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Конфигурация приборов учета</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Конфигурация приборов учета</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center>Начало данных:<input id="STime" type="text"></center>
+			<center>Конец данных:<input id="ETime" type="text"></center>
+			<center><input type="button" value="Считать" onclick="get_meter_arch_config()"></center>
+			</Br>
+			<h3 align=center>Конфигурация приборов учета</h3>			
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени,c</td>					
+					<td align="center">К. трансф. по току</td>
+					<td align="center">К. трансф. по напряжению</td>
+					<td align="center">Постоянная счетчика</td>
+					<td align="center">Наличие часов</td>
+					<td align="center">Наличие тарификатора</td>
+					<td align="center">Разрешение смены сезона</td>					
+					<td align="center">Поддержка реактивной энергии</td>
+					<td align="center">Поддержка обратной активной энергии</td>
+					<td align="center">Поддержка обратной реактивной энергии</td>			
+					<td align="center">Поддержка профилей мощности</td>
+					<td align="center">Период интегрирования,мин</td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_data_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

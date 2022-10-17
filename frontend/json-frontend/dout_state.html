@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Состояние линий питания</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		
+		<form action="" name="State">	
+			<h3 align=center>Состояние линий питания</h3>
+			<table align=center id="State">
+				<tr>				
+					<td align="center">Линия питания</td>
+					<td align="center">Состояние</td>
+				</tr>
+			</table>
+			<script>get_dout_state()</script>			
+		</form>
+		<table align=center>
+			<form method="get" action="/dout_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

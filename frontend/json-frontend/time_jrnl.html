@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Журнал установки времени</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+		
+		<form action="" name="Jrnl">	
+			<h3 align=center>Журнал установки времени</h3>
+			<table align=center id="Jrnl">
+				<tr>
+					<td align="center">ID</td>					
+					<td align="center">Время до установки</td>
+					<td align="center">Время после установки</td>
+					<td align="center">Причина изменения времени</td>
+				</tr>
+			</table>
+			<script>get_time_jrnl()</script>
+			<br></br>
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/time_info_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

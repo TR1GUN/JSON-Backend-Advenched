@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Системная информация</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>		
+		<form action="" name="State">	
+			<center>Версия ВПО: <output id="fwver" type="text"></center>
+			<center>Версия загрузчика: <output id="blver" type="text"></center>
+			<center>Версия платы: <output id="rev" type="text"></center>
+			<center>Модем: <output id="modem" type="text"></center>
+			<center>Батарея: <output id="bat" type="text"></center>
+			<center>MAC-адрес: <output id="mac" type="text"></center>
+			<center>Серийный номер: <output id="serial" type="text"></center>
+			<center>Тип питания: <output id="power" type="text"></center>
+			<center>Память: <output id="df" type="text"></center>
+			<center>Интерфейсы: <output id="if" type="text"></center>
+			<center>Дата выпуска: <output id="date" type="text"></center>
+			<script>get_system_state()</script>			
+		</form>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/main">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

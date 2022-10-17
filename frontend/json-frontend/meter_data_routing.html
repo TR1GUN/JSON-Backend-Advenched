@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Данные приборов учета</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<h1 align=center>USPD UM-RTU</h1>
+            <h3 align=center>Данные приборов учета</h3>
+            <table align=center>
+                <form method="get" action="/meter_moment_energy">
+				    <tr><td><center><input type="submit" value="Текущие показания энергии"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_moment_quality">
+				    <tr><td><center><input type="submit" value="Текущие показатели качества сети"></center></td></tr>
+                </form>
+				 <form method="get" action="/meter_moment_din">
+				    <tr><td><center><input type="submit" value="Текущие показания дискретных модулей ввода/вывода"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_config">
+				    <tr><td><center><input type="submit" value="Срезы аппаратной конфигурации"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_energy">
+				    <tr><td><center><input type="submit" value="Срезы показаний энергии"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_din">
+				    <tr><td><center><input type="submit" value="Срезы показаний дискретных модулей ввода/вывода"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_quality">
+				    <tr><td><center><input type="submit" value="Срезы показателей качества сети"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_day">
+				    <tr><td><center><input type="submit" value="Показания на начало суток"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_day_cons">
+				    <tr><td><center><input type="submit" value="Потребление за сутки"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_month">
+				    <tr><td><center><input type="submit" value="Показания на начало месяца"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_month_cons">
+				    <tr><td><center><input type="submit" value="Потребление за месяц"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_cons">
+				    <tr><td><center><input type="submit" value="Профили мощности"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_hour">
+				    <tr><td><center><input type="submit" value="Показания на начало часа"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_jrnl_din">
+				    <tr><td><center><input type="submit" value="Архивы показаний дискретных модулей ввода/вывода"></center></td></tr>
+                </form>
+				<form method="get" action="/meter_arch_journal">
+				    <tr><td><center><input type="submit" value="Данные журналов"></center></td></tr>
+                </form>		
+				<form method="get" action="/meter_routing">
+					<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+				</form>			
+			</table>                        		
+	</body>
+</html>

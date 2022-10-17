@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Управление реле</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Состояние реле</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center><input type="button" value="Считать" onclick="get_meter_moment_relay()"></center>
+			<h3 align=center>Состояние реле</h3>		
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени</td>
+					<td align="center">Реле</td>
+					<td align="center">Состояние реле</td>				
+				</tr>
+			</table>
+		</form>	
+		<form action="" name="MeterDataSet">
+			<h3 align=center>Управление реле</h3>
+			<center><table align=center id="Settings">			
+				<tr><td>ID прибора учета:</td><td><input id="id"></td></tr>
+				<tr><td>Номер реле:</td><td><input id="relayId"></td></tr>
+				<tr><td>Состояние реле:</td><td><input id="relayState"></td></tr>
+			</table></center>
+			<center><input type="button" value="Установить" onclick="set_meter_relay_state()"></center>			
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_settings_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

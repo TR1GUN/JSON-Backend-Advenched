@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Текущие показания дискретных модулей ввода/вывода</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Текущие показания дискретных модулей ввода/вывода</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			 <center>
+				<input type="checkbox" id="TagDIn"> Chnl
+			</center>
+			<center><input type="button" value="Считать" onclick="get_meter_moment_din()"></center>
+			</Br>
+			<h3 align=center>Показания дискретных модулей ввода/вывода</h3>		
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени</td>
+					<td align="center">Канал 1</td>
+					<td align="center">Канал 2</td>
+					<td align="center">Канал 3</td>
+					<td align="center">Канал 4</td>
+					<td align="center">Канал 5</td>
+					<td align="center">Канал 6</td>
+					<td align="center">Канал 7</td>
+					<td align="center">Канал 8</td>
+					<td align="center">Канал 9</td>
+					<td align="center">Канал 10</td>
+					<td align="center">Канал 11</td>
+					<td align="center">Канал 12</td>
+					<td align="center">Канал 13</td>
+					<td align="center">Канал 14</td>
+					<td align="center">Канал 15</td>
+					<td align="center">Канал 16</td>
+					<td align="center">Канал 17</td>
+					<td align="center">Канал 18</td>
+					<td align="center">Канал 19</td>
+					<td align="center">Канал 20</td>
+					<td align="center">Канал 21</td>
+					<td align="center">Канал 22</td>
+					<td align="center">Канал 23</td>
+					<td align="center">Канал 24</td>
+					<td align="center">Канал 25</td>
+					<td align="center">Канал 26</td>
+					<td align="center">Канал 27</td>
+					<td align="center">Канал 28</td>
+					<td align="center">Канал 29</td>
+					<td align="center">Канал 30</td>
+					<td align="center">Канал 31</td>
+					<td align="center">Канал 32</td>
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_data_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C/DTD HTML 4.0 Transitional//EN">
+<html>	
+    <head>
+    	<meta http-equiv="Pragma" content="no-cache" charset="utf-8"/>
+		<title>Срезы профилей мощности</title>
+		<script type="text/javascript" src="http.js">
+		</script>
+	</head>
+	<body>
+		<form action="" name="MeterDataRequest">
+			<h3 align=center>Срезы профилей мощности</h3>			
+			<center>ID прибора учета:<input id="id" type="text"></center>
+			<center>Начало данных:<input id="STime" type="text"></center>
+			<center>Конец данных:<input id="ETime" type="text"></center>
+			 <center>
+				<input type="checkbox" id="TagPp"> P+
+				<input type="checkbox" id="TagPm"> P-
+				<input type="checkbox" id="TagQp"> Q+
+				<input type="checkbox" id="TagQm"> Q-
+				<input type="checkbox" id="TagFlags"> Флаги
+				<input type="checkbox" id="TagPls"> Pls
+			</center>
+			<center><input type="button" value="Считать" onclick="get_meter_arch_cons()"></center>
+			</Br>
+			<h3 align=center>Срезы профилей мощности</h3>			
+			<table align=center id="MeterData">
+				<tr>
+					<td align="center">ID</td>
+					<td align="center">Серийный номер</td>
+					<td align="center">Метка времени</td>
+					<td align="center">Расхождение времени</td>
+					<td align="center">P+,Вт</td>
+					<td align="center">P-,Вт</td>
+					<td align="center">Q+,ВАр</td>
+					<td align="center">Q-,ВАр</td>
+					<td align="center">Наличие измерения</td>
+					<td align="center">Сезон:лето</td>
+					<td align="center">Переполнение</td>
+					<td align="center">Неполный срез</td>					
+				</tr>
+			</table>
+		</form>		
+		<br></br>
+		<br></br>
+		<table align=center>
+			<form method="get" action="/meter_data_routing">
+				<tr><td><center><input type="submit" value="Назад"></center></td></tr>
+			</form>
+		</table>			
+	</body>
+</html>
