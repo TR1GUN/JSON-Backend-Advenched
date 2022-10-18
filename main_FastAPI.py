@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI , Request
 from fastapi.responses import HTMLResponse
 
 
@@ -16,24 +16,36 @@ exceptions = {
 
 # --------------
 
-app = FastAPI(exception_handlers=exceptions)
+app = FastAPI(debug = True, exception_handlers=exceptions)
 
 from Frontend_manager import JSONFrontend
 Frontend = JSONFrontend()
-app.include_router(Frontend.router)
 
+
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    print("получили запрос на middleware")
+    app.include_router(Frontend.router)
+    # Вызываем функцию обработчик
+    print(request.url)
+
+    response = await call_next(request)
+
+    response.headers["X-Process-Time"] = str("headers response UM-40")
+    return response
 
 def do_work():
 
-    print('ujdyj ')
+    print('перед запросом')
 
 @app.get("/http.js")
-def Javascript_response():
+def Javascript_response(request:Request):
     """
     :param HTML_content:
     :return:
     """
-    print("ето мой запрос")
+    print("ето мой запрос",request.url )
 
     from fastapi.responses import FileResponse
     from Frontend_manager import FrontendJavascriptManager
@@ -65,8 +77,37 @@ def JSON_proto_response():
     :return:
     """
     from fastapi.responses import JSONResponse
-    response = {"Settings":[]}
+    response = {"Settings3":[]}
     return JSONResponse(content = response, status_code=200, media_type="application/json")
+
+@app.get("/settings/{lol1}/{lol2}/{lol3}")
+def JSON_proto_response():
+    """
+    :return:
+    """
+    from fastapi.responses import JSONResponse
+    response = {"Settings3":[]}
+    return JSONResponse(content = response, status_code=200, media_type="application/json")
+
+@app.get("/settings/{lol1}/{lol2}")
+def JSON_proto_response():
+    """
+    :return:
+    """
+    from fastapi.responses import JSONResponse
+    response = {"Settings2":[]}
+    return JSONResponse(content = response, status_code=200, media_type="application/json")
+
+@app.get("/settings/{lol1}")
+def JSON_proto_response():
+    """
+    :return:
+    """
+    print()
+    from fastapi.responses import JSONResponse
+    response = {"Settings1":[]}
+    return JSONResponse(content = response, status_code=200, media_type="application/json")
+
 
 # @app.get("/")
 # def read_root():

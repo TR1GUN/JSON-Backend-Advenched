@@ -210,6 +210,7 @@ def FrontendManager(url):
     return html_content
 # ======
 
+from fastapi import Request
 
 from fastapi import APIRouter
 from fastapi.responses import HTMLResponse, FileResponse
@@ -232,8 +233,7 @@ class JSONFrontend:
 
             self.router.add_api_route("/" + url, self.HTML_Page, methods=["GET"])
 
-        self.router.add_api_route("/", self.HTML_Page_Main , methods=["GET"])
-
+        self.router.add_api_route("/", self.HTML_Page_Main, methods=["GET"])
         # # Добавляем роутинг для файлов
         # urls = list(handlers_javascript_file.keys())
         # for url in urls:
@@ -258,7 +258,7 @@ class JSONFrontend:
     #
     #     return FileResponse(path=file_path, status_code=200 , media_type="application/javascript")
 
-    def HTML_Page_Main(self):
+    def HTML_Page_Main(self ):
         """
         :param HTML_content:
         :return:
@@ -267,12 +267,17 @@ class JSONFrontend:
 
         return HTMLResponse(content=html_content, status_code=200 , media_type="text/html")
 
-
     def HTML_Page(self):
         """
         :param HTML_content:
         :return:
         """
+
+        # self.url = request
+
+        print("пришел запрос ", self.url)
         html_content = FrontendManager(self.url)
+
+
 
         return HTMLResponse(content=html_content, status_code=200 , media_type="text/html")
