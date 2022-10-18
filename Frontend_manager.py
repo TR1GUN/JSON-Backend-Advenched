@@ -148,7 +148,7 @@ def FrontendStaticFileManager(url):
     html_path = """"""
 
     # обозначаем путь до папки с пакетом нашего фронтенда
-    frontend_path = "/Users/trigun-d/PycharmProjects/pythonFlask/frontend/json-frontend/"
+    frontend_path = "C:\\Users\\KDFX Team\\PycharmProjects\\JSON-Backend-Advenched\\frontend\json-frontend\\"
 
     # получаем HTML страницу по данному URL
     html_name_file = handlers_static_file.get(url)
@@ -170,7 +170,7 @@ def FrontendJavascriptManager(url):
     javascript_path = """"""
 
     # обозначаем путь до папки с пакетом нашего фронтенда
-    frontend_path = "/Users/trigun-d/PycharmProjects/pythonFlask/frontend/json-frontend/"
+    frontend_path = "C:\\Users\\KDFX Team\\PycharmProjects\\JSON-Backend-Advenched\\frontend\json-frontend\\"
 
     # получаем HTML страницу по данному URL
     html_name_file = handlers_javascript_file.get(url)
@@ -193,7 +193,7 @@ def FrontendManager(url):
     html_content = ""
 
     # обозначаем путь до папки с пакетом нашего фронтенда
-    frontend_path = "/Users/trigun-d/PycharmProjects/pythonFlask/frontend/json-frontend/"
+    frontend_path = "C:\\Users\\KDFX Team\\PycharmProjects\\JSON-Backend-Advenched\\frontend\json-frontend\\"
 
     # получаем HTML страницу по данному URL
     html_name_file = handlers_frontend.get(url)
