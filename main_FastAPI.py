@@ -45,6 +45,7 @@ def Javascript_response(request:Request):
     :param HTML_content:
     :return:
     """
+    app.
     print("ето мой запрос",request.url )
 
     from fastapi.responses import FileResponse
@@ -79,6 +80,28 @@ def JSON_proto_response():
     from fastapi.responses import JSONResponse
     response = {"Settings3":[]}
     return JSONResponse(content = response, status_code=200, media_type="application/json")
+
+@app.post("/settings/{lol1}/{lol2}/{lol3}")
+def JSON_proto_response(request:Request):
+    """
+    :return:
+    """
+    print(request)
+    from fastapi.responses import JSONResponse
+    response = {"SettingsPOST":[]}
+    return JSONResponse(content = response, status_code=200, media_type="application/json")
+
+
+@app.put("/settings/{lol1}/{lol2}/{lol3}")
+def JSON_proto_response(request:Request):
+    """
+    :return:
+    """
+    print(request.json())
+    from fastapi.responses import JSONResponse
+    response = {"SettingsPUT":[]}
+    return JSONResponse(content = response, status_code=200, media_type="application/json")
+
 
 @app.get("/settings/{lol1}/{lol2}/{lol3}")
 def JSON_proto_response():

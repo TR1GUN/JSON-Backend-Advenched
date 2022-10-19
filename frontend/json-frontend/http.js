@@ -8,10 +8,10 @@ function get_settings(uri, parser) {
                 var response = JSON.parse(this.responseText);
                 parser(response);
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(null);
@@ -27,10 +27,10 @@ function set_settings(uri, settings, method) {
             if (this.status == 200) {
 				window.location.reload();
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
 	request.send(JSON.stringify(settings));
@@ -45,10 +45,10 @@ function del_settings(uri) {
         if (this.readyState == 4) {
             if (this.status == 200) {
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			 if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
 	request.send(null);
@@ -57,6 +57,32 @@ function del_settings(uri) {
 function redirect_to_home_page() {
 	document.location.href = '/';
 }
+
+// ------ Добавлено - 
+// Переходим на страницу входа пользователя
+function redirect_to_login() {
+	document.location.href = '/login.html';
+}
+
+function get_define_main(uri) {
+    var request = new XMLHttpRequest();
+    request.open('GET', uri);
+	request.setRequestHeader('X-Protocol-USPD', '40');
+    request.onreadystatechange = function() {
+        if (this.readyState == 4) {
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
+        }
+    }
+    request.send(null);
+}
+
+function get_main_page() {
+	get_define_main('/main_index');
+}
+// ------ 
 
 function add_input(row, id)
 {
@@ -136,7 +162,7 @@ function add_meter_row()
 	var row = document.createElement("TR")
 	add_input(row,"id");
 	add_input(row,"pId");
-	add_custom_select(row,"type",[["Меркурий200","Mercury200"],["Меркурий203","Mercury203"],["Меркурий206","Mercury206"],["Меркурий23x","Mercury23x"],["Меркурий СПОДЭС","SPODES_M2XX"],["Энергомера СПОДЭС","SPODES_CE"],["Милур СПОДЭС","SPODES_MILUR"],["СЕ102","SE102"],["СЕ102М","SE102M"],["СЕ301","SE301"],["СЕ303","SE303"],["СЭБ2А","SEB2a"],["СЭТ4ТМ","SETxTM"],["ПСЧхТМ","PSCHxTM"],["Альфа1140","A1140"],["ТОПАЗ","TOPAZ"],["НЕВА1xx","NEVA1xx"],["НЕВА3xx","NEVA3xx"],["МИЛУР IC","MILUR IC"],["Милур10x","MILUR10x"],["Милур30x","MILUR30x"],["СОЭ55/215","SOE55_215"],["СОЭ55/217","SOE55_217"],["СОЭ55/415","SOE55_415"],["СТЭ561","STE561"],["ИНТЕГРА10х","INTEGRA10x"],["УМТВ10","UMTV10"],["Пульсар","Pulsar"],["ST410","ST410"]]);
+	add_custom_select(row,"type",[["Меркурий200","Mercury200"],["Меркурий203","Mercury203"],["Меркурий206","Mercury206"],["Меркурий23x","Mercury23x"],["СПОДЭС","SPODES"],["СЕ102","SE102"],["СЕ102М","SE102M"],["СЕ301","SE301"],["СЕ303","SE303"],["СЭБ2А","SEB2a"],["СЭТ4ТМ","SETxTM"],["ПСЧхТМ","PSCHxTM"],["Альфа1140","A1140"],["ТОПАЗ","TOPAZ"],["НЕВА1xx","NEVA1xx"],["НЕВА3xx","NEVA3xx"],["МИЛУР IC","MILUR IC"],["Милур10x","MILUR10x"],["Милур30x","MILUR30x"],["СОЭ55/215","SOE55_215"],["СОЭ55/217","SOE55_217"],["СОЭ55/415","SOE55_415"],["СТЭ561","STE561"],["ИНТЕГРА10х","INTEGRA10x"],["УМТВ10","UMTV10"],["Пульсар","Pulsar"],["ST410","ST410"]]);
 	add_input(row,"addr");
 	add_input(row,"passRd");
 	add_input(row,"passWr");	
@@ -633,10 +659,10 @@ function handleLogin(form) {
             if (this.status == 200) {
 				document.location.href = '/main.html';
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			// if (this.status == 403)
+			// {
+			// 	redirect_to_home_page();
+			// }
         }
     }
 	request.send(JSON.stringify(logindata));
@@ -652,10 +678,10 @@ function get_main() {
                 var response = JSON.parse(this.responseText);
                 document.getElementById('tm').innerText = response.time;
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			// if (this.status == 403)
+			// {
+			// 	redirect_to_home_page();
+			// }
         }
     }
     request.send(null);
@@ -672,10 +698,10 @@ function disk_clearing() {
         if (this.readyState == 4) {
             if (this.status == 200) {
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			// if (this.status == 403)
+			// {
+			// 	redirect_to_home_page();
+			// }
         }
     }
 	xhr.send(JSON.stringify(settings));
@@ -687,6 +713,9 @@ function parse_time(response) {
 	document.getElementById('sync').checked = response.sync;
 	document.getElementById('extstate').checked = response.state;
 }
+
+
+
 
 function get_time() {
 	get_settings('/state/time', parse_time);
@@ -1323,10 +1352,10 @@ function get_meter_moment_energy() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			 if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1350,10 +1379,10 @@ function get_meter_moment_din() {
             if ( this.status == 200) {
 				din_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1377,10 +1406,10 @@ function get_meter_arch_din() {
             if ( this.status == 200) {
 				din_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1404,10 +1433,10 @@ function get_meter_jrnl_din() {
             if ( this.status == 200) {
 				din_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1431,10 +1460,10 @@ function get_meter_moment_quality() {
             if ( this.status == 200) {
 				quality_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1461,10 +1490,10 @@ function get_meter_arch_energy() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1490,10 +1519,10 @@ function get_meter_arch_quality() {
             if ( this.status == 200) {
 				quality_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1520,10 +1549,10 @@ function get_meter_arch_day() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1550,10 +1579,10 @@ function get_meter_arch_day_cons() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1580,10 +1609,10 @@ function get_meter_arch_month() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1610,10 +1639,10 @@ function get_meter_arch_month_cons() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1639,10 +1668,10 @@ function get_meter_arch_config() {
             if ( this.status == 200) {
 				config_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1669,10 +1698,10 @@ function get_meter_arch_cons() {
             if ( this.status == 200) {
 				cons_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1699,10 +1728,10 @@ function get_meter_arch_hour() {
             if ( this.status == 200) {
 				energy_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1726,10 +1755,10 @@ function get_meter_jrnl() {
             if ( this.status == 200) {
 				journal_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1751,10 +1780,10 @@ function get_meter_moment_time() {
             if ( this.status == 200) {
 				time_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -1776,10 +1805,10 @@ function get_meter_moment_relay() {
             if ( this.status == 200) {
 				relay_response_parse(JSON.parse(this.responseText));				
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -2538,10 +2567,10 @@ function get_charge_process_state() {
             if ( this.status == 200) {
 				charge_process_state_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -2581,10 +2610,10 @@ function get_charge_session_state() {
             if ( this.status == 200) {
 				charge_session_state_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -2634,10 +2663,10 @@ function get_charge_station_state() {
             if ( this.status == 200) {
 				charge_station_state_response_parse(JSON.parse(this.responseText));
             }
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			 if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
         }
     }
     request.send(JSON.stringify(params));
@@ -2699,10 +2728,10 @@ function fetch_text_settings(uri, parser) {
 			if (this.status == 200) {
 				parser(this.responseText);
 			}
-			if (this.status == 403)
-			{
-				redirect_to_home_page();
-			}
+			if (this.status == 401)
+			 {
+			 	redirect_to_login();
+			 }
 		}
 	}
 	request.send(null);
@@ -2736,8 +2765,9 @@ function upload_firmware(data, progress_callback) {
 					render_upload_result('200 OK, Update started, please wait until device reboots...');
 					render_countdown_message(formElement, 120, 'Идет перезагрузка, осталось подождать', 'Перезагрузка завершена', redirect_to_home_page);
 					break;
-				case 403:
-					redirect_to_home_page();
+				case 401:
+				redirect_to_login();
+				
 					break;
 				default:
 					render_upload_result('500 BAD, An error occured...');
@@ -2785,8 +2815,8 @@ function restart_device() {
 		if (request.readyState === 4) {
 			switch (request.status) {
 				case 200:
-				case 403:
-					redirect_to_home_page();
+				// case 403:
+				// 	redirect_to_home_page();
 					break;
 				default:
 					console.log(request);

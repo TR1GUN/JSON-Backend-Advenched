@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth</title>
+    <style>
+        .auth {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            flex-direction: column;
+        }
+
+        .auth label {
+            margin-bottom: 5px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .auth input {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .auth-btn {
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .auth-back {
+            width: 100%;
+            margin-top: 25px;
+        }
+    </style>
+    <script type="text/javascript" src="functions.js">
+    </script>
+</head>
+
+<body>
+    <div class="auth">
+        <form onsubmit="onSubmit(event)" action="/auth" method="post">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login">
+            <label for="pass">Пароль:</label>
+            <input type="password" id="password" name="password">
+            <input class="auth-btn" type="submit" value="Войти">
+        </form>
+    </div>
+</body>
+<script>
+    function callbackFunc(msg) {
+        if (msg === 'success') {
+            window.location = 'main.html';
+        }
+    }
+
+    function onSubmit(e) {
+        e.preventDefault();
+        const getValue = id => {
+            const input = document.getElementById(id);
+            return input.value;
+        }
+        const login = getValue('login');
+        const password = getValue('password');
+        const data = { login, password };
+
+        makePOSTRequest("/auth", data, callbackFunc);
+    }
+
+</script>
+
+</html>
